@@ -6,16 +6,11 @@ const app = {
         $(e.currentTarget).toggleClass('transform')  
       });
   
-      // $('.circle').dblclick(e => {
-      //   $(e.currentTarget).toggleClass('moveMe')      
-      // });
+      $('.circle').dblclick(e => {
+        $(e.currentTarget).toggleClass('moveMe')      
+      });
 
-      // $('.circle').click(e => {
-       
-      //   $(e.currentTarget).toggleClass('randomCol')      
-      // });
-
-        $('.circle').click(function () {
+      $('.circle').click(function () {
         app.changeColor();
         // $('.circle').toggleClass('randomCol')
       });
@@ -26,40 +21,17 @@ const app = {
         $(e.currentTarget).show();                  
       });
 
-    //   $('.listBeatles').click(function () {
-    //     app.listBeatles();
-    //   })
-  
-    //   $('.compareBands').click(function () {
-    //     app.compareBands();
-    //   })
     },
       
+  // I would like to change the color for each circles, but querySelectorAll doesnt work in this function. 
+  // Since document.querySelectorAll() returns a nodelist, which is kind of like an array of elements.
+  // I guess i need to loop through that nodelist, changing color for each element?
       changeColor: () => {
         const randomColor = Math.floor(Math.random()*16777215).toString(16);
-        var el = document.querySelectorAll(".circle");
-        document.body.style.backgroundColor = "#" + randomColor;
-        el.style.backgroundColor = "#" + randomColor;
-        // document.getElementsByClassName("randomCol").style.background = "#" + randomColor;
-        // document.getElementsByClassName("circle").style.background = "#" + randomColor;
-        // document.querySelectorAll(".circle").style.background = "#" + randomColor;
-        // document.querySelectorAll(".circle").style.background = "#" + randomColor;
+        // let randomColCircle = document.querySelectorAll('.circle');
+        let randomColCircle = document.querySelector('.circle');
+        randomColCircle.style.background = "#" + randomColor;
+        // document.body.style.backgroundColor = "#" + randomColor;
       },
   
-    // listBeatles: () => {
-    //   // in this instance can also use this.data, it means the same thing. app.data is safer
-    //   app.data.beatles.albums.forEach(album => {
-    //     debugger;
-    //     $('.beatlesAlbums').append(`<li>${album.name}, ${album.year}</li>`);
-    //   });
-    // },
-  
-    // compareBands: () => {
-    //   const nirvanaMembers = app.data.nirvana.members;
-    //   const beatlesMembers = app.data.beatles.members;
-  
-    //   $('.bandsComparison').text(
-    //     `${nirvanaMembers.length > beatlesMembers.length ? 'Nirvana' : 'Beatles'} 
-    //   had more members`);
-    // }
   }

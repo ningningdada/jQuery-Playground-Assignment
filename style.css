@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #3EA69B;
+    background: #ffffff;
   }
   
   
@@ -67,7 +67,7 @@ body {
     height: 30px;
     width: 30px;
     margin: 10px; */
-    background: rgb(96, 105, 105);
+    /* background: rgb(96, 105, 105); */
     /* transition: all 1.5s linear; */
   }
 
@@ -79,7 +79,7 @@ body {
     background: rgb(27, 23, 23);
   }
   
-  /* .circle0 {
+  .circle0 {
     background: PaleTurquoise;
     transition: all 1.5s linear;
   } 
@@ -107,24 +107,9 @@ body {
   .circle5 {
     background: thistle;
     transition: all 1.5s cubic-bezier(0,1,.98,0); 
-  } */
+  }
   
   .moveMe {
     margin-left: 400px; 
   }
   
-  button {
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    text-transform: uppercase;
-  }
-  
-  .listBeatles {
-    background-color: salmon; 
-  }
-  
-  .compareBands {
-    background-color: #46BAAF;
-  }
